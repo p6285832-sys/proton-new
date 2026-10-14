@@ -25,6 +25,7 @@ export default function ConsultationBooking() {
         <div className="p-6 bg-emerald-50 rounded-2xl text-center space-y-2">
           <CheckCircle2 size={40} className="mx-auto text-emerald-600" />
           <h3 className="text-xl font-extrabold text-[#1d1d1f]">Booked</h3>
+          <p className="text-xs text-[#86868b] mt-2">LiveKit session: wss://proton-zmkj9cgf.livekit.cloud (token via SDK)</p>
           <p className="text-[#86868b] text-sm">We'll send a confirmation via WhatsApp.</p>
         </div>
       )}
