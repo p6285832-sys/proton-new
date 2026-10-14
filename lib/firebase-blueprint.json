@@ -1,0 +1,294 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "Authenticated user profile in PROTON Consultancy",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "Firebase Auth user unique ID"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "User full name"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "User email address"
+        },
+        "photoURL": {
+          "type": "string",
+          "description": "User profile avatar photo URL"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Account registration timestamp"
+        },
+        "lastLoginAt": {
+          "type": "string",
+          "description": "Last user login timestamp"
+        }
+      },
+      "required": ["uid", "email"]
+    },
+    "Assessment": {
+      "title": "Assessment",
+      "description": "User visa eligibility and points assessment record",
+      "type": "object",
+      "properties": {
+        "country": {
+          "type": "string",
+          "description": "Target destination country (e.g. Canada, UK, Australia, USA)"
+        },
+        "goal": {
+          "type": "string",
+          "description": "Immigration goal (e.g. study, pr, work)"
+        },
+        "fullName": {
+          "type": "string",
+          "description": "Candidate full legal name"
+        },
+        "phone": {
+          "type": "string",
+          "description": "Candidate phone number"
+        },
+        "score": {
+          "type": "number",
+          "description": "Eligibility score percentage"
+        },
+        "rating": {
+          "type": "string",
+          "description": "Eligibility rating qualification"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp when assessment was performed"
+        }
+      },
+      "required": ["country", "goal", "score"]
+    },
+    "Consultation": {
+      "title": "Consultation",
+      "description": "Priority booking session with senior visa counselor",
+      "type": "object",
+      "properties": {
+        "service": {
+          "type": "string",
+          "description": "Selected service of interest"
+        },
+        "branch": {
+          "type": "string",
+          "description": "Branch location or Online mode"
+        },
+        "advisor": {
+          "type": "string",
+          "description": "Assigned advisor name"
+        },
+        "date": {
+          "type": "string",
+          "description": "Selected appointment date and time slot"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Booking submission timestamp"
+        }
+      },
+      "required": ["service", "branch", "date"]
+    },
+    "ChatMessage": {
+      "title": "ChatMessage",
+      "description": "Advisor chat interaction message",
+      "type": "object",
+      "properties": {
+        "sender": {
+          "type": "string",
+          "enum": ["user", "assistant"],
+          "description": "Message author"
+        },
+        "text": {
+          "type": "string",
+          "description": "Chat message content"
+        },
+        "modelUsed": {
+          "type": "string",
+          "description": "AI model invoked"
+        },
+        "rolePersona": {
+          "type": "string",
+          "description": "Advisor role profile"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp of the message"
+        }
+      },
+      "required": ["sender", "text"]
+    },
+    "BranchInquiry": {
+      "title": "BranchInquiry",
+      "description": "Callback and visit inquiry submitted for a branch",
+      "type": "object",
+      "properties": {
+        "branchId": {
+          "type": "string",
+          "description": "Branch ID"
+        },
+        "branchName": {
+          "type": "string",
+          "description": "Branch Office Name"
+        },
+        "name": {
+          "type": "string",
+          "description": "Applicant Name"
+        },
+        "phone": {
+          "type": "string",
+          "description": "Applicant WhatsApp Contact"
+        },
+        "message": {
+          "type": "string",
+          "description": "Inquiry details"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp"
+        }
+      },
+      "required": ["branchId", "name", "phone"]
+    },
+    "AppointmentSlot": {
+      "title": "AppointmentSlot",
+      "description": "Consultation time slot availability, capacity, and booking state",
+      "type": "object",
+      "properties": {
+        "date": {
+          "type": "string",
+          "description": "Date formatted as YYYY-MM-DD"
+        },
+        "timeSlot": {
+          "type": "string",
+          "description": "Time range, e.g. 10:30 AM - 11:15 AM"
+        },
+        "period": {
+          "type": "string",
+          "enum": ["morning", "afternoon", "evening"],
+          "description": "Time of day group"
+        },
+        "advisorId": {
+          "type": "string",
+          "description": "Assigned advisor ID or 'any'"
+        },
+        "branch": {
+          "type": "string",
+          "description": "Office location or Online"
+        },
+        "bookedCount": {
+          "type": "number",
+          "description": "Number of currently confirmed bookings for this slot"
+        },
+        "maxCapacity": {
+          "type": "number",
+          "description": "Maximum concurrent consultation bookings allowed in this slot"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["available", "filling_fast", "full"],
+          "description": "Slot booking availability status"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Timestamp of last slot status update"
+        }
+      },
+      "required": ["date", "timeSlot", "status"]
+    },
+    "SharedDocument": {
+      "title": "SharedDocument",
+      "description": "Applicant visa file documents uploaded for counselor evaluation",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique document identifier"
+        },
+        "name": {
+          "type": "string",
+          "description": "File original name"
+        },
+        "category": {
+          "type": "string",
+          "enum": ["passport", "language_test", "academic", "experience", "financial", "resume", "other"],
+          "description": "Document category type"
+        },
+        "sizeBytes": {
+          "type": "number",
+          "description": "File size in bytes"
+        },
+        "fileType": {
+          "type": "string",
+          "description": "MIME type (pdf, image, doc)"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["uploaded", "under_review", "verified", "action_required"],
+          "description": "Review status by PROTON immigration officer"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Optional user notes or counselor feedback"
+        },
+        "uploadedAt": {
+          "type": "string",
+          "description": "Upload timestamp"
+        }
+      },
+      "required": ["name", "category", "status"]
+    }
+  },
+  "firestore": {
+    "/appointmentSlots/{slotId}": {
+      "schema": {
+        "$ref": "#/entities/AppointmentSlot"
+      },
+      "description": "Public consultation time slot availability state (available, filling_fast, or full)"
+    },
+    "/users/{userId}": {
+      "schema": {
+        "$ref": "#/entities/User"
+      },
+      "description": "User profile records containing account and auth metadata"
+    },
+    "/users/{userId}/assessments/{assessmentId}": {
+      "schema": {
+        "$ref": "#/entities/Assessment"
+      },
+      "description": "Visa eligibility calculations and profile assessments created by user"
+    },
+    "/users/{userId}/consultations/{consultationId}": {
+      "schema": {
+        "$ref": "#/entities/Consultation"
+      },
+      "description": "Scheduled appointments and consultation bookings created by user"
+    },
+    "/users/{userId}/documents/{documentId}": {
+      "schema": {
+        "$ref": "#/entities/SharedDocument"
+      },
+      "description": "Visa documents shared by candidate with counselor"
+    },
+    "/users/{userId}/chatSessions/{sessionId}/messages/{messageId}": {
+      "schema": {
+        "$ref": "#/entities/ChatMessage"
+      },
+      "description": "Conversational messages exchanged with the AI immigration advisor"
+    },
+    "/branchInquiries/{inquiryId}": {
+      "schema": {
+        "$ref": "#/entities/BranchInquiry"
+      },
+      "description": "Public callback inquiries submitted for branch consultations"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --color-blue-accent: #2563eb;
+  --color-blue-deep: #1e40af;
+  --color-ink: #0f0f11;
+  --color-paper: #f8fafc;
+  --color-muted: #86868b;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-sans); background: var(--color-paper); color: var(--color-ink); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }

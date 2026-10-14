@@ -1,0 +1,117 @@
+[
+  {
+    "id": "staff_owner_primary",
+    "name": "Vineet Chauhan / Owner",
+    "email": "p08745114@gmail.com",
+    "role": "super_admin",
+    "password": "ProtonAdmin@2026",
+    "designation": "Chief Managing Director & Platform Owner",
+    "branch": "City Light Head Office, Surat",
+    "active": true,
+    "createdAt": "2026-10-10T08:00:40.736Z",
+    "permissions": {
+      "documents": true,
+      "clients": true,
+      "website": true,
+      "leads": true,
+      "sms_service": true,
+      "staff_management": true
+    }
+  },
+  {
+    "id": "staff_vineet_sir",
+    "name": "Vineet Chauhan (Vineet Sir)",
+    "email": "admin@protonconsultancy.com",
+    "role": "super_admin",
+    "password": "Vineet@8181",
+    "designation": "Founder & Chief Immigration Counsel",
+    "branch": "City Light Head Office, Surat",
+    "active": true,
+    "createdAt": "2026-10-10T08:00:40.736Z",
+    "lastLoginAt": "2026-10-13T12:07:38.422Z",
+    "permissions": {
+      "documents": true,
+      "clients": true,
+      "website": true,
+      "leads": true,
+      "sms_service": true,
+      "staff_management": true
+    }
+  },
+  {
+    "id": "staff_anjali_pr",
+    "name": "Anjali",
+    "email": "anjali@protonconsultancy.com",
+    "role": "senior_counselor",
+    "password": "Anjali@8181",
+    "designation": "Canada & Australia PR Lead Counsel",
+    "branch": "All Branches / Headquarters",
+    "active": true,
+    "createdAt": "2026-10-10T08:00:40.736Z",
+    "permissions": {
+      "documents": true,
+      "clients": true,
+      "website": false,
+      "leads": true,
+      "sms_service": false,
+      "staff_management": false
+    }
+  },
+  {
+    "id": "staff_vruti_study",
+    "name": "Vruti",
+    "email": "vruti@protonconsultancy.com",
+    "role": "case_officer",
+    "password": "Vruti@8181",
+    "designation": "Senior Student Visa Filing Officer",
+    "branch": "Killa-Pardi Branch",
+    "active": true,
+    "createdAt": "2026-10-10T08:00:40.736Z",
+    "permissions": {
+      "documents": true,
+      "clients": true,
+      "website": false,
+      "leads": false,
+      "sms_service": false,
+      "staff_management": false
+    }
+  },
+  {
+    "id": "staff_1791624132413_wsz9",
+    "name": "Insiya",
+    "email": "insiya@protonconsultancy.com",
+    "role": "senior_counselor",
+    "password": "Pro@8181",
+    "designation": "HR & Student Relations",
+    "branch": "City Light Head Office, Surat",
+    "active": true,
+    "createdAt": "2026-10-10T09:22:12.413Z",
+    "permissions": {
+      "documents": false,
+      "clients": true,
+      "website": false,
+      "leads": true,
+      "sms_service": false,
+      "staff_management": false
+    }
+  },
+  {
+    "id": "staff_1791624313820_sprs",
+    "name": "Parinda",
+    "email": "parinda@protonconsultancy.com",
+    "role": "senior_counselor",
+    "password": "Parinda@8181",
+    "designation": "Canada & Australia PR Specialist",
+    "branch": "City Light Head Office, Surat",
+    "active": true,
+    "createdAt": "2026-10-10T09:25:13.820Z",
+    "permissions": {
+      "documents": true,
+      "clients": true,
+      "website": false,
+      "leads": true,
+      "sms_service": false,
+      "staff_management": false
+    }
+  }
+]
