@@ -9,3 +9,5 @@ Api keys.txt
 .env
 node_modules/
 .next/
+
+.vercel
