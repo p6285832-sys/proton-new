@@ -3,3 +3,9 @@ node_modules/
 *.log
 .env.local
 .env
+
+Api keys.txt
+.env.local
+.env
+node_modules/
+.next/
